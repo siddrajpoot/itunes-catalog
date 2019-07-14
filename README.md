@@ -5,6 +5,8 @@ This app is to allow anyone to search the iTunes store using their API! There ar
 1. **Frontend**: React
 2. **Backend**: Node.js/Express
 
+You can see a live demo of the website [here](https://itunes.sidd.dev).
+
 ## File structure
 
 The app is split out into two folders:
