@@ -35,6 +35,8 @@ const handleMediaData = ({
 app.get('/api', (req, res) => {
 	const { term } = req.query
 
+	if (!term) return res.status(400).send({ error: 'No search term given.' })
+
 	fetchItunes(term)
 		.then(data => {
 			if (!data || !data.data) {
@@ -43,7 +45,7 @@ app.get('/api', (req, res) => {
 
 			const { resultCount, results } = data.data
 			if (resultCount === 0) {
-				return res.status(204).send({ error: 'No results found' })
+				return res.status(204).send({ error: 'No results found.' })
 			}
 
 			const mappedResults = {}
@@ -88,3 +90,5 @@ app.use((error, req, res, next) => {
 app.listen(port, () => {
 	console.log(`Server running on port: ${port}`)
 })
+
+module.exports = app

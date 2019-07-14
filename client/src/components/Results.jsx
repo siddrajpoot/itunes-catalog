@@ -23,8 +23,13 @@ class Results extends React.Component {
 	}
 
 	fetchResults = term => {
+		const url =
+			process.env.NODE_ENV === 'development'
+				? '/api/'
+				: 'https://deeply-turret-1.glitch.me/api/'
+
 		this.LoadingBar.continousStart()
-		axios.get(`/api/?term=${term}`).then(data => {
+		axios.get(`${url}?term=${term}`).then(data => {
 			this.handleResults(data)
 			this.LoadingBar.complete()
 		})
