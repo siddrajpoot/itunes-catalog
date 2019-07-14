@@ -23,8 +23,17 @@ class Results extends React.Component {
 	}
 
 	fetchResults = term => {
+		let url
+		if (process.env.NODE_ENV === 'development') {
+			url = '/api/'
+		}
+
+		if (process.env.NODE_ENV === 'production') {
+			url = 'https://server.siddrajpoot.now.sh/'
+		}
+
 		this.LoadingBar.continousStart()
-		axios.get(`/api/?term=${term}`).then(data => {
+		axios.get(`${url}?term=${term}`).then(data => {
 			this.handleResults(data)
 			this.LoadingBar.complete()
 		})
