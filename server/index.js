@@ -39,7 +39,7 @@ app.get('/api', (req, res) => {
 
 	fetchItunes(term)
 		.then(data => {
-			if (!data || !data.data) {
+			if (!data && !data.data) {
 				return res.status(500).send({ error: 'Unable to fetch data.' })
 			}
 
