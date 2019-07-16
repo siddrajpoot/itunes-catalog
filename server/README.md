@@ -10,6 +10,4 @@ The endpoint allows you to get all iTunes media for a given search.
 | -----: | :------: | :----: | ----------- |
 | `term` | required | string | Search term |
 
-**Parameters**
-
 Example: `/api/?term=drake`
