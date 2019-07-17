@@ -38,3 +38,15 @@ yarn start
 ```
 
 Client app should now be running on localhost:8080
+
+**Todo**
+
+- [ ] Handle no results
+
+- [ ] Mobile styling
+
+- [ ] Split apart SCSS
+
+- [ ] Refactor results and likes component
+
+- [ ] Page and UI animations
